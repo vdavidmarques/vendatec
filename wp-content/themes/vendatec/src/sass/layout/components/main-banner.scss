@@ -1,0 +1,143 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+
+.banners{
+  overflow-y: hidden;
+}
+
+.banner .default-heading-title h1,
+.banner .default-heading-title h2,
+.banner .default-heading-title h3 {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    width: 55%;
+
+  }
+}
+
+.banner .default-heading-title h1,
+.banner .default-heading-title h2,
+.banner .default-heading-title h3,
+.banner .default-heading-title p,
+.banner .button {
+  @media screen and (min-width: $breakpoint-lg) {
+    margin-left: 8%;
+  }
+  @media screen and (min-width: $breakpoint-xl) {
+    margin-left: 5%;
+  }
+  @media screen and (min-width: $breakpoint-1_5xl) {
+    margin-left: 0;
+  }
+}
+
+.banner .default-heading-title p {
+  @media screen and (min-width: $breakpoint-lg) {
+    width: 40%;
+  }
+}
+
+.banners .default-heading-title {
+  padding: 0 1rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+      max-width: 48rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 0 2.5rem;
+    max-width: 64rem;
+    
+    h1 {
+     max-width: 56.25rem;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    max-width: 80rem;
+  }
+
+  @media screen and (min-width: $breakpoint-2xl) {
+    max-width: 96rem;
+  }
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: $font-rubik;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin-top: 0.625rem;
+    
+    @media screen and (min-width: $breakpoint-lg) {
+      font-size: 3.4375rem;
+      text-indent: -1px;
+      line-height: 3.5rem;
+    }
+  }
+}
+
+.swiper-button-next.arrow-swiper-next,
+.swiper-button-prev.arrow-swiper-prev {
+  display: none;
+  
+  @media screen and (min-width: $breakpoint-lg) {
+    display: flex;
+  }
+}
+
+.swiper-button-next.arrow-swiper-next {
+  right: 1.875rem;
+}
+
+.swiper-button-prev.arrow-swiper-prev {
+  left: 1.875rem;
+}
+
+.arrow-swiper-prev::after {
+  transform: rotate(180deg);
+}
+
+.swiper-container {
+  position: relative;
+  height: 34.375rem;
+  
+  @media screen and (min-width: $breakpoint-md){
+    height: 25rem;
+  }
+  
+  @media screen and (min-width: $breakpoint-lg) {
+    height: 43.75rem;
+  }
+
+  a {
+    margin-top: 24px;
+    text-decoration: none;
+  }
+
+  .default-heading-title {
+    color: $white;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    right: 0;
+    top: 1.125rem;
+    
+    @media screen and (min-width: $breakpoint-lg) {
+      top: 5.625rem;
+    }
+  }
+}

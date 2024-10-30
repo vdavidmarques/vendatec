@@ -1,0 +1,174 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+
+.header-menu-itens {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  position: relative;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding-bottom: 0;
+  }
+
+  .logo img{
+    width: 15.625rem;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .logotype,
+  .open-menu-mobile {
+    @media screen and (min-width: $breakpoint-lg) {
+      grid-column: span 6 / span 6;
+    }
+  }
+  .logotype{
+    grid-column: span 9 / span 9;
+  }
+
+  .open-menu-mobile {
+    grid-column: span 3 / span 3;
+  }
+
+  .open-menu-mobile {
+    display: flex;
+    justify-content: end;
+  }
+
+  .menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 90;
+    display: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $font-rubik;
+    grid-column: span 2 / span 2;
+
+    @media screen and (min-width: $breakpoint-xl) {
+      position: relative;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      row-gap: 1.25rem;
+      grid-column: span 8 / span 8;
+    }
+
+    .bg-close-menu-mobile {
+      @media screen and (min-width: $breakpoint-xl) {
+        display: none;
+      }
+    }
+
+    nav#custom-header-menu {
+      overflow-y: scroll;
+      padding-bottom: 3.75rem;
+      width: 100%;
+  
+      @media screen and (min-width: $breakpoint-xl) {
+        overflow-y: inherit;
+        padding-bottom: 0;
+        width: auto;
+      }
+    
+      ul#custom-header-menu {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+        margin-top: 3.125rem;
+    
+        @media screen and (min-width: $breakpoint-xl) {
+          flex-direction: row;
+          row-gap: 0;
+          column-gap: 1rem;
+          margin-top: 0;
+        }
+    
+        @media screen and (min-width: $breakpoint-1_5xl) {
+          column-gap: 1.5rem;
+        }
+    
+        @media screen and (min-width: $breakpoint-2xl) {
+          column-gap: 4rem;
+        }
+    
+        li a {
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: $font-rubik;
+          font-size: 1rem;
+          line-height: 1.875rem;
+          color: $white;
+    
+          @media screen and (min-width: $breakpoint-xl) {
+            color: $blue;
+            
+            &:hover{ 
+              font-size: 1rem;
+              color: $blue-dark;
+              @include transition-colors;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+  .header-menu-itens .logotype {
+    grid-column: span 4 / span 4;
+  }
+  .header-menu-itens .open-menu-mobile {
+    display: none;
+  }
+}
+
+
+
+.header-menu-itens .menu-items.openned {
+  background-color: $blue-dark;
+  padding: 1.25rem;
+  display: flex;
+}
+
+.header-menu-itens .menu-items .bg-close-menu-mobile {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  padding-left: 1.5rem;
+  text-indent: -624.9375rem;
+  border: none;
+  position: absolute;
+  top: 1.75rem;
+  right: 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: url("../../library/icons/close-menu-icon.svg");
+}
+
+.header-menu-itens .open-menu-mobile .bg-menu-mobile {
+  background: url("../../library/icons/menu-icon.svg");
+  width: auto;
+  height: 2.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  padding-left: 1.5rem;
+  text-indent: -624.9375rem;
+  border: none;
+
+  @media screen and (min-width: $breakpoint-xl) {
+    display: none;
+  }
+}
+
