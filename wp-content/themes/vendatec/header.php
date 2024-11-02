@@ -1,3 +1,5 @@
+<?php include_once 'utils/check-enviroment.php'; ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -9,24 +11,23 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <div id="wrapper" class="hfeed">
-        <header id="header" role="banner">
-            <div id="branding">
-                <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-                    <?php
-                    if (is_front_page() || is_home() || is_front_page() && is_home()) {
-                        echo '<h1>';
-                    }
-                    echo '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name')) . '" rel="home" itemprop="url"><span itemprop="name">' . esc_html(get_bloginfo('name')) . '</span></a>';
-                    if (is_front_page() || is_home() || is_front_page() && is_home()) {
-                        echo '</h1>';
-                    }
-                    ?>
-                </div>
-            </div>
-            <nav id="menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
-                <?php wp_nav_menu(array('theme_location' => 'main-menu', 'link_before' => '<span itemprop="name">', 'link_after' => '</span>')); ?>
-            </nav>
-        </header>
-        <div id="container">
-            <main id="content" role="main">
+    <header id="header" role="banner">
+        <div id="branding">
+            <a href="/">
+                <img src="<?php echo  get_template_directory_uri() . '/dist/images/vendatec.svg' ?>" alt="Vendatec" class="logo" itemprop="image">
+            </a>
+        </div>
+        <nav id="menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'custom_header_menu',
+                'menu'           => 'Menu do Header',
+                'menu_id'        => 'custom-header-menu',
+                'menu_class'     => 'main-menu',
+                'fallback_cb'    => '__return_false',
+            ));
+            ?>
+        </nav>
+    </header>
+
+    <main id="content" role="main">
