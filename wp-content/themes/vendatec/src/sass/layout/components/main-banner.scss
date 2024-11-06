@@ -1,143 +1,133 @@
 @import "../../helpers/variables.scss";
 @import "../../helpers/mixins.scss";
+@import "../../helpers/placeholder.scss";
+@import "../../helpers/clip-paths.scss";
 
-.banners{
-  overflow-y: hidden;
-}
-
-.banner .default-heading-title h1,
-.banner .default-heading-title h2,
-.banner .default-heading-title h3 {
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-
-  @media screen and (min-width: $breakpoint-lg) {
-    width: 55%;
-
-  }
-}
-
-.banner .default-heading-title h1,
-.banner .default-heading-title h2,
-.banner .default-heading-title h3,
-.banner .default-heading-title p,
-.banner .button {
-  @media screen and (min-width: $breakpoint-lg) {
-    margin-left: 8%;
-  }
-  @media screen and (min-width: $breakpoint-xl) {
-    margin-left: 5%;
-  }
-  @media screen and (min-width: $breakpoint-1_5xl) {
-    margin-left: 0;
-  }
-}
-
-.banner .default-heading-title p {
-  @media screen and (min-width: $breakpoint-lg) {
-    width: 40%;
-  }
-}
-
-.banners .default-heading-title {
-  padding: 0 1rem;
-
-  @media screen and (min-width: $breakpoint-md) {
-    max-width: 40rem;
-    margin-left: auto;
-    margin-right: auto;
+.main-banner {
+  overflow: hidden;
+  
+  img{
+    pointer-events: none;
   }
 
-  @media screen and (min-width: $breakpoint-md) {
-      max-width: 48rem;
-  }
+  &--item {
+    position: relative;
+    min-height: 37.5rem;
+    padding-bottom: 3.125rem;
 
-  @media screen and (min-width: $breakpoint-lg) {
-    padding: 0 2.5rem;
-    max-width: 64rem;
-    
-    h1 {
-     max-width: 56.25rem;
+    @media (min-width: $breakpoint-xl) {
+      display: flex!important;
+      flex-direction: row-reverse;
+      column-gap: 1.25rem;
+      align-items: center;
+      min-height: 30.5rem;
+      justify-content: center;
     }
-  }
-
-  @media screen and (min-width: $breakpoint-xl) {
-    max-width: 80rem;
-  }
-
-  @media screen and (min-width: $breakpoint-2xl) {
-    max-width: 96rem;
-  }
-
-  h1,
-  h2 {
-    text-transform: uppercase;
-  }
-
-  h1 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: $font-rubik;
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-    margin-top: 0.625rem;
-    
-    @media screen and (min-width: $breakpoint-lg) {
-      font-size: 3.4375rem;
-      text-indent: -1px;
-      line-height: 3.5rem;
+   
+    .clip-svg {
+      width: 0;
+      height: 0;
     }
-  }
-}
 
-.swiper-button-next.arrow-swiper-next,
-.swiper-button-prev.arrow-swiper-prev {
-  display: none;
-  
-  @media screen and (min-width: $breakpoint-lg) {
-    display: flex;
-  }
-}
+    &--image {
+      height: 18.75rem;
+      object-fit: fill;
+      margin-top: 0.625rem;
+      
+      @media (min-width: $breakpoint-md) {
+        height: 33.75rem;
+        margin-top: 0;
+      }
 
-.swiper-button-next.arrow-swiper-next {
-  right: 1.875rem;
-}
+      @media (min-width: $breakpoint-lg) {
+        height: 44.75rem;
+        object-fit: cover;
+      }
 
-.swiper-button-prev.arrow-swiper-prev {
-  left: 1.875rem;
-}
+      @extend %max-width;
 
-.arrow-swiper-prev::after {
-  transform: rotate(180deg);
-}
+      @media (min-width: $breakpoint-xl) {
+        height: 27.8125rem;        
+      }
+      
+      &.desktop,
+      &--bg {
+        display: none;
+         
+        @media (min-width: $breakpoint-lg) {
+          display: block;
+        }
+      }
 
-.swiper-container {
-  position: relative;
-  height: 34.375rem;
-  
-  @media screen and (min-width: $breakpoint-md){
-    height: 25rem;
-  }
-  
-  @media screen and (min-width: $breakpoint-lg) {
-    height: 43.75rem;
-  }
+      &--mobile {
+        clip-path: $clip-path-xxs;
+        
+        @media (min-width: $breakpoint-xs) {
+          clip-path: $clip-path-xs;
+        }
+        
+        @media (min-width: $breakpoint-xxsm) {
+          clip-path: $clip-path-xxsm;
+        }
 
-  a {
-    margin-top: 24px;
-    text-decoration: none;
-  }
+        @media (min-width: $breakpoint-xsm) {
+          clip-path: $clip-path-xsm;
+        }
 
-  .default-heading-title {
-    color: $white;
-    position: absolute;
-    left: 0;
-    z-index: 10;
-    right: 0;
-    top: 1.125rem;
-    
-    @media screen and (min-width: $breakpoint-lg) {
-      top: 5.625rem;
+        @media (min-width: $breakpoint-sm) {
+          clip-path: $clip-path-sm;
+        }
+
+        @media (min-width: $breakpoint-md) {
+          clip-path: $clip-path-md;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+          display: none;
+        }
+      }
+
+      &--desktop{
+        @extend %clip-path-desktop;
+      }
+
+      &.mobile{
+        @extend %clip-path-desktop;
+      }
+    }
+
+    .bg {
+      opacity: 0.1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--text {
+      color: $white;
+      font-family: $font-rubik;
+      font-weight: bolder;
+      font-size: 1.5625rem;
+      line-height: 2.3125rem;
+      margin-top: 2.5rem;
+
+      @extend %max-width;
+
+      @media (min-width: $breakpoint-xxs) {
+        word-break: break-word;
+        max-width: 315px;
+      }
+
+      @media (min-width: $breakpoint-xs) {
+        max-width: 21.875rem;
+      }
+      @media (min-width: $breakpoint-xxsm) {
+        word-break: initial;
+        max-width: inherit;
+      }
     }
   }
 }
