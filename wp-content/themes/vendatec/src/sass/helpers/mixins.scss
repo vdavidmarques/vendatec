@@ -13,7 +13,8 @@
   margin-right: auto;
 }
 
-@mixin text-xs {//12px
+@mixin text-xs {
+  //12px
   font-size: 0.75rem;
   line-height: 1.25rem;
 }
@@ -24,7 +25,8 @@
   @include font-rubik;
 }
 
-@mixin heading-title-sm {//14px
+@mixin heading-title-sm {
+  //14px
   @include text-sm;
   @include heading-titles;
 }
@@ -52,20 +54,20 @@
   border: none;
 }
 
-@mixin button-primary{
+@mixin button-primary {
   width: fit-content;
   height: fit-content;
   @include heading-text-sm;
   text-transform: uppercase;
   text-decoration: none;
-  background-color: $blue;
+  background-color: $fColorDark;
   color: $white;
   padding: 1.25rem;
   font-weight: bold;
   border: none;
-  
-  &:hover{
-    background-color: $blue-dark;
+
+  &:hover {
+    background-color: $fColorDark-dark;
     @include transition-colors;
   }
 }
@@ -202,22 +204,23 @@
   grid-column-start: 12;
 }
 
-@mixin mx-auto{
+@mixin mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-@mixin anime-bounce{
+@mixin anime-bounce {
   animation: bounce 1s infinite;
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
   }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
 }

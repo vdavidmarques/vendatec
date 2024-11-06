@@ -1,0 +1,40 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./clip-paths.scss";
+
+%display-flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%display-flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+%link-hover{
+    color: $fColor;
+    &:hover{
+        color: $fColorDark;
+        @include transition-colors;
+    }
+}
+
+%max-width{
+    @media (min-width: $breakpoint-xl) {
+        max-width: 39.0625rem; 
+    }
+}
+
+%clip-path-desktop{
+    @media (min-width: $breakpoint-lg) {
+        clip-path: $clip-path-lg;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        clip-path: $clip-path-xl;
+    }
+}
+   

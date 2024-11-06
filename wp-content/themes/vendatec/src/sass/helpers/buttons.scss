@@ -26,24 +26,24 @@
 }
 
 .button-second {
-  background-color: $blue;
+  background-color: $fColorDark;
   color: $white;
 
   &:hover{
-    background-color: $blue-dark;
+    background-color: $fColorDark;
     color: $white;
   }
 }
 
 .button-default {
   background-color: $white;
-  color: $blue;
+  color: $fColorDark;
 
 }
 
 .button-second, .button-default{
   &:hover{
-    background-color: $blue-dark;
+    background-color: $fColorDark;
     color: $white;
   }
 }

@@ -158,14 +158,14 @@ textarea,
 input[type] {
   font-family: $font-rubik;
   width: 100%;
-  border: 1px solid $blue;
+  border: 1px solid $fColorDark;
   padding: 0.625rem 1.25rem 0.625rem 1.25rem;
   border-radius: 1.25rem;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: $blue;
+  color: $fColorDark;
 }
 
 textarea {
@@ -202,11 +202,12 @@ section {
 }
 
 body {
-  font-family: $font-rubik;
+  font-family: $font-montserrat;
   font-size: 1rem;
   line-height: 1.875rem;
   overflow-x: hidden;
-  color: $blue;
+  color: $fColorUltraDark;
+  background-color: $grayLight;
 }
 
 a {
@@ -233,14 +234,13 @@ strong {
   padding: 0 1rem;
   width: 100%;
 
-  @media screen and (min-width: $breakpoint-md) {
-    max-width: $breakpoint-md;
-  }
+
   @media screen and (min-width: $breakpoint-md) {
     max-width: $breakpoint-md;
   }
   @media screen and (min-width: $breakpoint-lg) {
     padding: 0 2.5rem;
+    max-width: $breakpoint-lg;
   }
   @media screen and (min-width: $breakpoint-xl) {
     max-width: $breakpoint-xl;
@@ -337,5 +337,24 @@ img {
 
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+.bg-red-dark{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: $fColorDark;
+  z-index: -10;
+}
+
+.swiper-slide{
+  .swiper-button-prev, .swiper-button-next  {
+    display: none;
+    @media(min-width: $breakpoint-lg){
+      display: block;
+    }
   }
 }
