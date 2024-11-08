@@ -1,0 +1,29 @@
+@import "../../../helpers/variables.scss";
+@import "../../../helpers/mixins.scss";
+@import "../../../helpers/placeholder.scss";
+
+.content-home{
+    background-color: $white;  
+
+    @extend %content-padding-top-bottom;
+
+    &--container{
+        @media(min-width: $breakpoint-lg){
+            display: grid;
+            @include grid-cols-12;
+        }
+    }
+
+    &--texts{
+       
+        @extend %heading-title-styles;
+        
+        @media(min-width: $breakpoint-lg){
+            @include col-span-8;
+            @include col-start-3;
+            justify-content: center;    
+            align-items: center;
+        }
+
+    }
+}

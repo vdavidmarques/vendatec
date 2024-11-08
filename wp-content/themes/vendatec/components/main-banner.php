@@ -11,11 +11,11 @@
                         <div class="bg-red-dark">&nbsp;</div>
                         <?php if ($mainBanner['image']['url']): ?>
                             <img src="<?php echo $mainBanner['image']['url']; ?>" alt="Soluções personalizadas para Bancos de Sangue, Agências Transfusionais e Laboratórios de Hematologia e Hemoterapia" class="main-banner--item--image main-banner--item--image--desktop <?php echo ($mainBanner['image-mobile']['url']) ? 'desktop' : 'mobile' ?>">
-                            <img src="<?php echo $mainBanner['image']['url']; ?>" alt="Soluções personalizadas para Bancos de Sangue, Agências Transfusionais e Laboratórios de Hematologia e Hemoterapia" class="main-banner--item--image--desktop bg <?php echo ($mainBanner['image-mobile']['url']) ? 'desktop' : 'mobile' ?>">
+                            <img src="<?php echo $mainBanner['image']['url']; ?>" alt="Soluções personalizadas para Bancos de Sangue, Agências Transfusionais e Laboratórios de Hematologia e Hemoterapia" class="bg <?php echo ($mainBanner['image-mobile']['url']) ? 'desktop' : 'mobile' ?>">
                         <?php endif; ?>
                         <?php if ($mainBanner['image-mobile']['url']): ?>
                             <img src="<?php echo $mainBanner['image-mobile']['url']; ?>" alt="Soluções personalizadas para Bancos de Sangue, Agências Transfusionais e Laboratórios de Hematologia e Hemoterapia" class="main-banner--item--image main-banner--item--image--mobile">
-                            <img src="<?php echo $mainBanner['image-mobile']['url']; ?>" alt="Soluções personalizadas para Bancos de Sangue, Agências Transfusionais e Laboratórios de Hematologia e Hemoterapia" class="main-banner--item--image--mobile bg">
+                            <img src="<?php echo $mainBanner['image-mobile']['url']; ?>" alt="Soluções personalizadas para Bancos de Sangue, Agências Transfusionais e Laboratórios de Hematologia e Hemoterapia" class="bg">
                         <?php endif; ?>
 
                         <div class="main-banner--item--text">
@@ -26,8 +26,6 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <div class="swiper-button-prev arrow-swiper arrow-swiper-prev"></div>
-                        <div class="swiper-button-next arrow-swiper arrow-swiper-next"></div>
                     </div>
             <?php endforeach;
             endif; ?>

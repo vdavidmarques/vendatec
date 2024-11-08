@@ -37,4 +37,30 @@
         clip-path: $clip-path-xl;
     }
 }
-   
+
+%content-padding-top-bottom{
+    padding: 2.5rem 0;
+
+    @media (min-width: $breakpoint-lg) {
+      padding: 5rem 0;
+    }
+}
+
+%heading-title-styles{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+
+    h1,h2,h3,h4{
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: $font-rubik;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        color: $fColorDark;
+    }
+
+    stronger{
+        color: $fColorDark;
+    }
+}
