@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width">
     <?php wp_head(); ?>
 
+    <title itemprop="name">
+        <?php
+            if(is_home()){
+                echo "";
+            }elseif(is_tax()){
+                echo single_cat_title() . ' |';
+            }elseif(is_archive()){
+                echo get_the_archive_title() . ' |';
+            }elseif(is_singular()){
+                echo single_post_title() . ' |';
+            }else{
+                echo get_the_title() . ' |';
+            }
+        ?>
+       Vendatec
+    </title>
+
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri() . '/dist/images/apple-icon-57x57.png' ?>">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri() . '/dist/images/apple-icon-60x60.png' ?>">
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri() . '/dist/images/apple-icon-72x72.png' ?>">
