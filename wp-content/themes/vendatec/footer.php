@@ -87,7 +87,12 @@
     if (is_home($id)) : 
 ?>
  <script src="<?php echo get_template_directory_uri() . "/dist/js/swiper/main-banner.js" ?>"></script>
- <?php endif;?>
+ <?php 
+    endif;
+    if(is_page('parcerias')):
+ ?>
+ <script src="<?php echo get_template_directory_uri() . "/dist/js/partners-load-more.js" ?>"></script>
+<?php endif; ?>
 </body>
 
 </html>

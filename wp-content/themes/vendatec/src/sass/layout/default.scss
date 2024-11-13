@@ -225,7 +225,7 @@ strong {
 }
 
 [aria-current]:not([aria-current="false"]) {
-  color: #9babab !important;
+  color: $fColorDark !important;
 }
 
 .container {

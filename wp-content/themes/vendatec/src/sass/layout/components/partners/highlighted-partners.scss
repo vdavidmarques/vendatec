@@ -1,0 +1,202 @@
+@import "../../../helpers/variables.scss";
+@import "../../../helpers/mixins.scss";
+@import "../../../helpers/placeholder.scss";
+
+.highlighted-partners {
+  background-color: $fColorDark;
+  color: $white;
+  padding-bottom: 2.5rem;
+  @media (min-width: $breakpoint-lg) {
+    padding-bottom: 5rem;
+  }
+
+  &--item {
+    margin-bottom: 2.5rem;
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 5rem;
+    }
+
+    .content-about--header {
+      padding-top: 5rem;
+    }
+
+    .products-for-partner-items {
+      display: grid;
+      @include grid-cols-1;
+      gap: 2.5rem;
+      
+      @media (min-width: $breakpoint-lg){
+        @include grid-cols-2;
+      }
+
+      @media (min-width: $breakpoint-xl){
+        @include grid-cols-3;
+      }
+
+      &--item {
+        border-radius: 2.5rem;
+        overflow: hidden;
+        border: 4px solid $fColorUltraDark;
+
+        @media (min-width: $breakpoint-xl) {
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        &--link{
+          @media (min-width: $breakpoint-lg){
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            align-items: stretch;
+          }
+        }
+
+        &--thumb {
+          width: 100%;
+          aspect-ratio: 18 / 9;
+          min-height: 250px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 4px solid $fColorUltraDark;
+
+          @media (min-width: $breakpoint-lg) {
+            min-height: 18.75rem;
+          }
+        }
+
+        &--content {
+          background-color: $white;
+          color: $fColorUltraDark;
+          display: flex;
+          flex-direction: column;
+          row-gap: 1rem;
+          text-align: center;
+          overflow: hidden;
+
+          @media (min-width: $breakpoint-lg) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+          }
+
+          .title {
+            text-transform: uppercase;
+            font-weight: 900;
+            font-family: $font-rubik;
+            font-size: 20px;
+            line-height: 1.5rem;
+            padding-top: 1.25rem;
+          }
+          .title,
+          .desc {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+
+          .desc{
+            line-height: 1.5rem;
+          }
+
+          .button {
+            color: $white;
+            width: 100%;
+            background-color: $fColorUltraDark;
+            border-radius: 0;
+            border: none;
+            height: 3.4375rem;
+
+            &.button--arrow {
+              background-position: 70%;
+            }
+
+            &--empty{
+              height: 2.1875rem;
+            }
+          }
+        }
+
+        &:hover {
+            border-color: $fColor;
+            
+          .products-for-partner-items--item--thumb .image {
+            transition: all 0.5s ease-in-out;
+            transform: scale(1.1);
+          }
+          .products-for-partner-items--item--content .title {
+            color: $fColor;
+            @include transition-colors;
+          }
+
+          .products-for-partner-items--item--thumb{
+            border-color: $fColor;
+          }
+  
+          .button {
+            background-color: $fColor;
+            @include transition-colors;
+          }
+        }
+      }
+
+    }
+
+    .load-more.button {
+      margin-top: 5rem;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      padding-right: 3.75rem;
+    }
+  }
+
+  &.not-highlighted-partners {
+    background-color: $grayLight;
+    color: $fColorDark;
+
+    .highlighted-partners--item {
+      .content-about--header {
+        background-color: $grayLight;
+        color: $fColorDark;
+      }
+
+      .products-for-partner-items {
+        &--item {
+          border-color: $fColorDark;
+
+          &--thumb {
+            border-color: $fColorDark;
+          }
+
+          &--content {
+            color: $fColorDark;
+
+            .button {
+              background-color: $fColorDark;
+            }
+          }
+
+          &:hover {
+            border-color: $fColorUltraDark;
+            .products-for-partner-items--item--content .title {
+              color: $fColorUltraDark;
+            }
+
+            .products-for-partner-items--item--thumb{
+                border-color: $fColorUltraDark;
+            }
+
+            .button {
+              background-color: $fColorUltraDark;
+            }
+          }
+        }
+      }
+    }
+  }
+}

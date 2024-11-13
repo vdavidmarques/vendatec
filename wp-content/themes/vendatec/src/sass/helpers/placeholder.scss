@@ -3,58 +3,88 @@
 @import "./clip-paths.scss";
 
 %display-flex-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-%link-hover{
-    color: $fColor;
-    &:hover{
-        color: $fColorDark;
-        @include transition-colors;
-    }
+%link-hover {
+  color: $fColor;
+  &:hover {
+    color: $fColorDark;
+    @include transition-colors;
+  }
 }
 
-%max-width{
-    @media (min-width: $breakpoint-xl) {
-        max-width: 39.0625rem; 
-    }
+%max-width {
+  @media (min-width: $breakpoint-xl) {
+    max-width: 39.0625rem;
+  }
 }
 
-%clip-path-desktop{
+%clip-path-desktop {
+  @media (min-width: $breakpoint-lg) {
+    clip-path: $clip-path-lg;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    clip-path: $clip-path-xl;
+  }
+}
+
+%content-padding-top-bottom {
+  padding: 2.5rem 0;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 5rem 0;
+  }
+}
+
+%heading-title-styles {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: $font-rubik;
+    font-size: 20px;
+    line-height: 1.5rem;
+
     @media (min-width: $breakpoint-lg) {
-        clip-path: $clip-path-lg;
+      font-size: 2.1875rem;
+      line-height: 2.5rem;
     }
+  }
 
-    @media (min-width: $breakpoint-xl) {
-        clip-path: $clip-path-xl;
-    }
+  stronger {
+    color: $fColorDark;
+  }
+
 }
 
-%content-padding-top-bottom{
-    padding: 2.5rem 0;
+%contents--link-hover {
+  .thumbnail {
+    .image {
+      border-color: $fColorUltraDark;
+      @include transition-colors;
+      transition: all 0.5s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+}
+%secundary-banner-height {
+  @media (min-width: $breakpoint-lg) {
+    height: 37.5rem;
+  }
+}
+
+%content-about--list--container--items--texts-height{
+    height: 2.8125rem;
 
     @media (min-width: $breakpoint-lg) {
-      padding: 5rem 0;
-    }
-}
-
-%heading-title-styles{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.25rem;
-
-    h1,h2,h3,h4{
-        text-transform: uppercase;
-        font-weight: 900;
-        font-family: $font-rubik;
-        font-size: 1.25rem;
-        line-height: 1.5rem;
-        color: $fColorDark;
-    }
-
-    stronger{
-        color: $fColorDark;
+        height: 3.75rem;
     }
 }

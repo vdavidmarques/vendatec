@@ -13,6 +13,8 @@
   font-family: $font-rubik;
   position: relative;
   font-size: 1.125rem;
+  cursor: pointer;
+  border: none;
 
   &:hover{
     @include transition-colors;
@@ -38,6 +40,29 @@
       border: 3px solid $fColorUltraDark;
     }
   }
+
+  &--terciary{
+    background-color: $white;
+    color: $fColorDark;
+
+    &:hover{
+      background-color: $fColorUltraDark;
+      color: $white;
+    }
+  }
+
+  &--quaternary{
+    background-color: $fColorDark;
+    color: $white;
+
+    &:hover{
+      background-color: $fColorUltraDark;
+    }
+  }
+
+  &--empty{
+    cursor: inherit;
+  }
 }
 
 .button--arrow{
@@ -51,9 +76,21 @@
     &:hover{
       background-image: url('../../dist/icons/arrow-up-white.svg');
     }
+
+    &--white{
+      background-image: url('../../dist/icons/arrow-up-white.svg');
+    }
   }
 
   &.button--arrow-down{
     background-image: url('../../dist/icons/arrow-down.svg');
+
+    &--red-dark{
+      background-image: url('../../dist/icons/arrow-down-red-dark.svg');
+
+      &:hover{
+        background-image: url('../../dist/icons/arrow-down.svg');
+      }
+    }
   }
 }

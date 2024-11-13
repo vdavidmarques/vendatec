@@ -113,6 +113,7 @@ header {
         height: 100vh;
         padding: 20px;
         background-color: $fColorDark;
+        z-index: 50;
 
         nav#menu {
           margin-top: 3.75rem;

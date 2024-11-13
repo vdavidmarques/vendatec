@@ -14,6 +14,8 @@
 
     &--texts {
       @extend %heading-title-styles;
+      color: $fColorDark;
+
       text-align: center;
       margin-bottom: 2.5rem;
 
@@ -106,30 +108,26 @@
                 font-size: 1.25rem;
                 border: none;
                 color: $white;
+                background-position: 75%;
 
                 @media (min-width: $breakpoint-xl) {
                   position: absolute;
                   bottom: 0;
                   left: 0;
+                  background-position: 70%;
                 }
               }
             }
           }
 
           &:hover {
-            .thumbnail {
-              .image {
-                border-color: $fColorUltraDark;
-                @include transition-colors;
-                transition: all 0.5s ease-in-out;
-                transform: scale(1.1);
-              }
-            }
+            @extend %contents--link-hover;
             .informations {
               .content {
                 background-color: $fColorUltraDark;
                 @include transition-colors;
               }
+              
               .button-know-more {
                 background-color: $fColorDark;
                 @include transition-colors;
@@ -139,6 +137,7 @@
         }
       }
     }
+    
     .swiper-container{
       position: relative;
       
@@ -166,13 +165,23 @@
                 }
               }
             }
+
+            &:hover {
+              @extend %contents--link-hover;
+
+              .button-know-more {
+                background-color: $fColorUltraDark!important;
+                @include transition-colors;
+              }
+
+            }
           }
         }
       }
 
       .swiper-button-next, .swiper-button-prev{
         color: $fColorDark;
-        background-color: $white;
+        background-color: #ffffffad;
       }
     }
   }

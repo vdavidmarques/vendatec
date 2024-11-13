@@ -1,0 +1,138 @@
+@import "../../../helpers/variables.scss";
+@import "../../../helpers/mixins.scss";
+@import "../../../helpers/placeholder.scss";
+
+.content-about {
+  &--header {
+    padding: 2.5rem 0;
+    background-color: $fColorDark;
+    color: $white;
+    @media (min-width: $breakpoint-lg) {
+      padding: 5rem 0;
+    }
+
+    &--texts {
+      @media (min-width: $breakpoint-lg) {
+        display: grid;
+        @include grid-cols-12;
+        column-gap: 1.25rem;
+      }
+
+      .title-wwa {
+        @extend %heading-title-styles;
+        margin-bottom: 1.25rem;
+
+        @media (min-width: $breakpoint-lg) {
+          @include col-span-5;
+        }
+      }
+
+      .desc-wwa {
+        @media (min-width: $breakpoint-lg) {
+          @include col-span-7;
+        }
+      }
+    }
+  }
+
+  &--values {
+    .content-about--header {
+      background-color: $white;
+      color: $fColorDark;
+
+      .title-wwa-values-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        @media (min-width: $breakpoint-lg) {
+          @include col-span-5;
+        }
+
+        .tag {
+          text-transform: uppercase;
+          font-size: 20;
+          font-weight: 900;
+          font-family: $font-rubik;
+          color: $fColorUltraDark;
+        }
+      }
+    }
+  }
+
+  &--list{
+    padding: 5rem 0;
+    color: $fColorDark;
+
+    @media (min-width: $breakpoint-lg) {
+      padding: 6.25rem 0;
+    }
+
+    &--container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 5rem;
+
+        @media (min-width: $breakpoint-lg) {
+            display: grid;
+            @include grid-cols-12;
+        }
+
+        &--items{
+            position: relative;
+            
+            @media (min-width: $breakpoint-lg) {
+                @include col-span-8;
+            }
+
+            &.item-2{
+                @media (min-width: $breakpoint-lg) {
+                    @include col-start-5;
+                }
+            }
+
+            &--texts{
+                @extend %heading-title-styles;
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.25rem;
+
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 3.75rem;
+                    @extend %content-about--list--container--items--texts-height;
+
+                    &::before{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        content: '';
+                        background-image: url(../../dist/icons/check-circle.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 45px;
+                       @extend %content-about--list--container--items--texts-height;
+                        
+                        @media (min-width: $breakpoint-lg) {
+                            width: 3.75rem;
+                           
+                        }
+                    }
+                }
+
+                p{
+                    color: $fColorUltraDark;
+                }
+            }
+        }
+    }
+    
+  }
+}

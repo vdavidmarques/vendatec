@@ -17,6 +17,10 @@
     &--texts{
        
         @extend %heading-title-styles;
+        color: $fColorDark;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
         
         @media(min-width: $breakpoint-lg){
             @include col-span-8;

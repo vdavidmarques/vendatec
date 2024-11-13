@@ -1,0 +1,79 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+@import "../../helpers/placeholder.scss";
+
+.secundary-banner{
+    .main-banner-item{
+        position: relative;
+        @extend %secundary-banner-height;
+
+        &--bg{
+            position: relative;
+            height: 18.75rem;
+
+            @media (min-width: $breakpoint-lg){
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .image{
+                height: 18.75rem;
+                @extend %secundary-banner-height;
+
+            }
+
+
+            .bg-linear{
+                background: rgb(117,0,0);
+                background: linear-gradient(0deg, rgb(117 0 0 / 84%) 5%, rgba(117, 0, 0, 0) 100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                @extend %secundary-banner-height;
+                mix-blend-mode: multiply;
+                
+                @media (min-width: $breakpoint-lg){
+                    background: linear-gradient(90deg, rgba(117,0,0,1) 45%, rgba(117,0,0,0) 100%);
+                }
+            }
+        }
+
+        &--text{
+            @extend %heading-title-styles;
+            color: $fColorDark;
+            z-index: 10;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            @extend %secundary-banner-height;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.25rem;
+
+            @media (min-width: $breakpoint-lg){
+                color: $white;
+                position: relative;
+                z-index: 10;
+                padding-top: 0;
+                padding-bottom: 0;
+                justify-content: center;
+                width: 50%;
+            }
+            
+            .button--arrow{
+                background-position: 95%;
+            }
+        }
+
+        &--title{
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.25rem;
+        }
+    }
+}

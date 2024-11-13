@@ -19,12 +19,11 @@
                     $short_desc = get_field('partner-short-descrip');
                     $highlight = get_field('partner-highlight');
                     $highlighted_order = get_field('partner-highlighted-order');
-                    $not_highlighted_order = get_field('partner-not-highlighted-order');
                     $slug = get_post_field('post_name', get_the_ID());
         ?>
                     <?php if ($highlight): ?>
                         <article class="contents order-position-<?php echo esc_attr($highlighted_order); ?>">
-                            <a href="#<?php echo esc_attr($slug); ?>" class="contents--link">
+                            <a href="parcerias/#<?php echo esc_attr($slug); ?>" class="contents--link">
                                 <div class="thumbnail">
                                     <img src="<?php echo esc_url($main_image['url']); ?>" alt="<?php echo esc_attr($title); ?>" class="image ease-in-out">
                                 </div>
@@ -32,7 +31,7 @@
                                     <div class="content">
                                         <h3 class="title"><?php echo esc_html($title); ?></h3>
                                         <p class="description"><?php echo esc_html($short_desc); ?></p>
-                                        <button class="button-know-more button-arrow button-arrow-up">Saiba Mais</button>
+                                        <button class="button-know-more button--arrow button--arrow-up button--arrow-up--white">Saiba Mais</button>
                                     </div>
                                 </div>
                             </a>
@@ -65,15 +64,15 @@
 
                         if (!$highlight): ?>
                             <article class="contents swiper-slide not-highlighted order-position-<?php echo esc_attr($not_highlighted_order); ?>">
-                                <a href="#<?php echo esc_attr($slug); ?>" class="contents--link">
+                                <a href="parcerias/#<?php echo esc_attr($slug); ?>" class="contents--link">
                                     <div class="thumbnail">
-                                        <img src="<?php echo esc_url($main_image['url']); ?>" alt="<?php echo esc_attr($title); ?>" class="image ease-in-out">
+                                        <img src="<?php echo esc_url($main_image['url']); ?>" alt="<?php echo esc_attr($title); ?>" class="image">
                                     </div>
                                     <div class="informations">
                                         <div class="content">
                                             <h3 class="title"><?php echo esc_html($title); ?></h3>
                                             <p class="description"><?php echo esc_html($short_desc); ?></p>
-                                            <button class="button-know-more button-arrow button-arrow-up">Saiba Mais</button>
+                                            <button class="button-know-more button--arrow button--arrow-up button--arrow-up--white">Saiba Mais</button>
                                         </div>
                                     </div>
                                 </a>
