@@ -225,7 +225,11 @@ strong {
 }
 
 [aria-current]:not([aria-current="false"]) {
-  color: $fColorDark !important;
+  color: $fColorUltraDark!important;
+
+  @media (min-width: $breakpoint-lg){
+    color: $fColorDark !important;
+  }
 }
 
 .container {

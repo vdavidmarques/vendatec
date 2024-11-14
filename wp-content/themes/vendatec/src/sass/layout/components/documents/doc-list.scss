@@ -1,0 +1,74 @@
+@import "../../../helpers/variables.scss";
+@import "../../../helpers/mixins.scss";
+@import "../../../helpers/placeholder.scss";
+
+.docs-list{
+    padding: 2.5rem 0;
+
+    @media (min-width: $breakpoint-lg) {
+        padding: 5rem 0;
+    }
+
+    &--items{
+        display: grid;
+        @include grid-cols-1;
+        row-gap: 2.5rem;
+        
+        @media (min-width: $breakpoint-md) {
+            @include grid-cols-2;
+        }
+
+        @media (min-width: $breakpoint-xl) {
+            @include grid-cols-3;
+            column-gap: 2.5rem;
+        }
+
+        &--item{
+            border-radius: 2.5rem 0.625rem 0.625rem 2.5rem;
+            overflow: hidden;
+            color: $fColorUltraDark;
+            display: grid;
+            @include grid-cols-4;
+            border: 4px solid $fColorDark;
+
+            &--thumb{
+                @include col-span-2;
+                overflow: hidden;
+            }
+
+            &--content{
+                padding-top: 0.625rem;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: end;
+                @include col-span-2;
+                text-align: center;
+
+                .title{
+                   
+                    padding-left: 0.625rem;
+                    padding-right: 0.625rem;
+                }
+
+                .button{
+                    border-radius: 0;
+                }
+            }
+
+        }
+
+    }
+    .docs-list--items--item:hover{
+        .docs-list--items--item--thumb .image{
+            @extend %ease-in-out;
+        }
+        
+        .docs-list--items--item--content{
+            .button{
+                background-color: $fColorUltraDark;
+            }
+        }
+
+    }
+}

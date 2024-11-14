@@ -1,10 +1,10 @@
-@import './variables.scss';
-@import './mixins.scss';
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./placeholder.scss";
 
 .button {
   @include transition-colors;
   width: fit-content;
-  padding: 0.9375rem 2.5rem 0.9375rem 1.25rem;
   text-decoration: none;
   border-radius: 20px;
   line-height: 20px;
@@ -16,81 +16,123 @@
   cursor: pointer;
   border: none;
 
-  &:hover{
+  &:hover {
     @include transition-colors;
   }
-  
-  &--primary{
+
+  &--primary {
     background-color: $fColor;
     color: $white;
 
-    &:hover{
+    &:hover {
       background-color: $fColorUltraDark;
     }
   }
 
-  &--secundary{
+  &--secundary {
     background-color: $fColor;
     color: $fColorDark;
     border: 3px solid $fColorDark;
 
-    &:hover{
+    &:hover {
       background-color: $fColorDark;
       color: $white;
       border: 3px solid $fColorUltraDark;
     }
   }
 
-  &--terciary{
+  &--terciary {
     background-color: $white;
     color: $fColorDark;
 
-    &:hover{
+    &:hover {
       background-color: $fColorUltraDark;
       color: $white;
     }
   }
 
-  &--quaternary{
+  &--quaternary {
     background-color: $fColorDark;
     color: $white;
 
-    &:hover{
+    &:hover {
       background-color: $fColorUltraDark;
     }
   }
 
-  &--empty{
+  &--empty {
     cursor: inherit;
   }
-}
 
-.button--arrow{
-  background-repeat: no-repeat;
-  background-position: 90%;
-  background-size: 1.25rem 1.25rem;
+  &--arrow {
+    
+    &.button--arrow-up {
+      @extend %button-icon;
+      
+      &::after {
+        @extend %button-icon-position;
+        width: 1rem;
+        height: 1rem;
+        background-image: url("../../dist/icons/arrow-up.svg");
 
-  &.button--arrow-up{
-    background-image: url('../../dist/icons/arrow-up.svg');
+      }
+      &:hover {
+        @extend %button-icon-position;
+        &::after {
+          background-image: url("../../dist/icons/arrow-up-white.svg");
+        }
+      }
 
-    &:hover{
-      background-image: url('../../dist/icons/arrow-up-white.svg');
+      &--white {
+        @extend %button-icon-position;
+        &::after {
+          width: 1rem;
+          height: 1rem;
+          background-image: url("../../dist/icons/arrow-up-white.svg");
+        }
+      }
     }
 
-    &--white{
-      background-image: url('../../dist/icons/arrow-up-white.svg');
+    &.button--arrow-down {
+      @extend %button-icon;
+  
+      @extend %button-icon-position;
+      &::after{
+        background-image: url("../../dist/icons/arrow-down.svg");
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      &--red-dark {
+        @extend %button-icon-position;
+        &::after{
+          background-image: url("../../dist/icons/arrow-down-red-dark.svg");
+          width: 1.25rem;
+          height: 1.25rem;
+
+        }
+        &:hover {
+          &::after {
+            background-image: url("../../dist/icons/arrow-down-white.svg");
+          }
+        }
+
+      }
     }
   }
 
-  &.button--arrow-down{
-    background-image: url('../../dist/icons/arrow-down.svg');
+  &--download {
+    @extend %button-icon;
 
-    &--red-dark{
-      background-image: url('../../dist/icons/arrow-down-red-dark.svg');
-
-      &:hover{
-        background-image: url('../../dist/icons/arrow-down.svg');
-      }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 2.125rem;
+      height: 2.125rem;
+      background-image: url("../../dist/icons/download.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: 0.5rem;
     }
   }
 }

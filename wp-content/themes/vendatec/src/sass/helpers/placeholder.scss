@@ -11,8 +11,12 @@
 %link-hover {
   color: $fColor;
   &:hover {
-    color: $fColorDark;
     @include transition-colors;
+    color: $fColorUltraDark;
+
+    @media (min-width: $breakpoint-lg) {
+      color: $fColorDark;
+    }
   }
 }
 
@@ -62,7 +66,6 @@
   stronger {
     color: $fColorDark;
   }
-
 }
 
 %contents--link-hover {
@@ -75,16 +78,41 @@
     }
   }
 }
+
+%ease-in-out {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+
 %secundary-banner-height {
   @media (min-width: $breakpoint-lg) {
     height: 37.5rem;
   }
 }
 
-%content-about--list--container--items--texts-height{
-    height: 2.8125rem;
+%content-about--list--container--items--texts-height {
+  height: 2.8125rem;
 
-    @media (min-width: $breakpoint-lg) {
-        height: 3.75rem;
-    }
+  @media (min-width: $breakpoint-lg) {
+    height: 3.75rem;
+  }
+}
+
+%button-icon{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+%button-icon-position {
+  &::after{
+    content: "";
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 0.5rem;
+  }
 }
