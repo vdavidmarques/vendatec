@@ -28,10 +28,10 @@
                             <div class="content-about--header">
                                 <div id="<?php echo esc_attr($slug) ?>" class="content-about--header--anchor">&nbsp;</div>
                                 <article class="content-about--header--texts order-position-<?php echo esc_attr($highlighted_order); ?>">
-                                    <div class="title-wwa">
+                                    <div class="title-wwa scroll-effect">
                                         <h2><?php echo esc_html($title); ?></h2>
                                     </div>
-                                    <div class="desc-wwa">
+                                    <div class="desc-wwa scroll-effect">
                                         <?php echo esc_html($short_desc); ?>
                                     </div>
                                 </article>
@@ -60,7 +60,7 @@
                                         $thumb = get_the_post_thumbnail_url();
                                         $files = get_field('product-file', get_the_ID());
                                     ?>
-                                        <div class="products-for-partner-items--item" <?php echo $is_hidden; ?>>
+                                        <div class="products-for-partner-items--item scroll-effect" <?php echo $is_hidden; ?>>
                                             <?php
                                             if ($files) :
                                                 foreach ($files as $post) :
@@ -103,10 +103,10 @@
                                                         </div>
                                                     <?php endif; ?>
                                                     <div class="products-for-partner-items--item--content">
-                                                        <div class="title">
+                                                        <div class="title scroll-effect">
                                                             <h3><?php echo esc_html($titulo); ?></h3>
                                                         </div>
-                                                        <p class="desc"><?php echo esc_html($description); ?></p>
+                                                        <p class="desc scroll-effect"><?php echo esc_html($description); ?></p>
                                                         <button class="button button-secundary button--empty">&nbsp;</button>
                                                     </div>
                                                 </div>
@@ -122,7 +122,7 @@
                             wp_reset_postdata();
                             if ($product_count > 3) :
                             ?>
-                                <button id="load-more-highlighted" class="load-more button button--terciary button--arrow button--arrow-down--red-dark" data-partner-id="<?php echo esc_attr($partner_id); ?>">Carregar mais</button>
+                                <button id="load-more-highlighted" class="load-more button button--terciary button--arrow button--arrow-down--red-dark scroll-effect" data-partner-id="<?php echo esc_attr($partner_id); ?>">Carregar mais</button>
                             <?php endif; ?>
                         </div>
         <?php

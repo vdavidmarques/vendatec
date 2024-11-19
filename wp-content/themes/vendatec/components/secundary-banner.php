@@ -11,9 +11,9 @@
             </div>
             <div class="container">
                 <div class="main-banner-item--text">
-                    <div class="main-banner-item--title"><?php echo $mainBanner['main-text']; ?></div>
+                    <div class="main-banner-item--title scroll-effect"><?php echo $mainBanner['main-text']; ?></div>
                     <?php if ($mainBanner['link-option']): ?>
-                        <a href="<?php echo $mainBanner['button']['url']; ?>" class="main-banner-item--button button button--primary button--arrow button--arrow-down"><?php echo $mainBanner['button']['title']; ?></a>
+                        <a href="<?php echo $mainBanner['button']['url']; ?>" class="main-banner-item--button button button--primary button--arrow button--arrow-down scroll-effect"><?php echo $mainBanner['button']['title']; ?></a>
                     <?php endif; ?>
                 </div>
             </div>

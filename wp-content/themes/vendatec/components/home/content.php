@@ -1,6 +1,6 @@
 <section class="content-home">
     <div class="container content-home--container">
-        <div class="content-home--texts">
+        <div class="content-home--texts scroll-effect">
             <?php 
                 echo get_field('home-texts-who-we-are', $id);
                 $button = get_field('button-who-we-are', $id);

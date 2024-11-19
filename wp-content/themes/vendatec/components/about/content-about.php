@@ -2,10 +2,10 @@
     <div class="content-about--header">
         <div class="container">
             <article class="content-about--header--texts">
-                <div class="title-wwa">
+                <div class="title-wwa scroll-effect">
                     <h2><?php echo get_field('title-wwa'); ?></h2>
                 </div>
-                <div class="desc-wwa">
+                <div class="desc-wwa scroll-effect">
                     <?php echo get_field('desc-wwa'); ?>
                 </div>
             </article>
@@ -16,14 +16,14 @@
             <div class="container">
                 <div class="content-about--header--texts">
                     <div class="title-wwa-values-container">
-                        <div class="tag">
+                        <div class="tag scroll-effect">
                             <h3><?php echo get_field('tag-wwa-values'); ?></h3>
                         </div>
-                        <div class="title-wwa">
+                        <div class="title-wwa scroll-effect">
                             <h2><?php echo get_field('title-wwa-values'); ?></h2>
                         </div>
                     </div>
-                    <div class="desc-wwa">
+                    <div class="desc-wwa scroll-effect">
                         <?php echo get_field('desc-wwa-values'); ?>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
             if ($listWWAValues):
                 foreach ($listWWAValues as $listWWAValue):
                     ?>
-                <article class="content-about--list--container--items item-<?php echo $counter ?>">
+                <article class="content-about--list--container--items item-<?php echo $counter ?> scroll-effect">
                     <div class="content-about--list--container--items--texts">
                         <?php echo $listWWAValue['content-wwa-values']; ?>
                     </div>

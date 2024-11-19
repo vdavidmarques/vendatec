@@ -27,10 +27,10 @@ function exibir_produtos()
                     <div class="content-about--header">
                         <div id="<?php echo esc_attr($slug) ?>" class="content-about--header--anchor">&nbsp;</div>
                         <article class="content-about--header--texts order-position-<?php echo esc_attr($not_highlighted_order); ?>">
-                            <div class="title-wwa">
+                            <div class="title-wwa scroll-effect">
                                 <h2><?php echo esc_html($main_title); ?></h2>
                             </div>
-                            <div class="desc-wwa">
+                            <div class="desc-wwa scroll-effect">
                                 <?php echo esc_html($s_desc); ?>
                             </div>
                         </article>
@@ -60,7 +60,7 @@ function exibir_produtos()
                                 $thumb = get_the_post_thumbnail_url();
                                 $files = get_field('product-file', get_the_ID());
                             ?>
-                            <div class="products-for-partner-items--item" <?php echo $is_hidden; ?>>
+                            <div class="products-for-partner-items--item scroll-effect" <?php echo $is_hidden; ?>>
                             <?php
                                             if ($files) :
                                                 foreach ($files as $post) :
@@ -118,7 +118,7 @@ function exibir_produtos()
                     wp_reset_postdata();
                     if ($product_count > 3) :
                     ?>
-                    <button id="load-more-not-highlighted" class="load-more button button--quaternary button--arrow button--arrow-down" data-partner-id="<?php echo esc_attr($partner_id); ?>">Carregar mais</button>
+                    <button id="load-more-not-highlighted" class="load-more button button--quaternary button--arrow button--arrow-down scroll-effect" data-partner-id="<?php echo esc_attr($partner_id); ?>">Carregar mais</button>
                     <?php endif; ?>
                 </div>
     <?php

@@ -54,7 +54,7 @@
         <div class="container content">
             <div class="branding">
                 <a href="/">
-                    <img src="<?php echo  get_template_directory_uri() . '/dist/images/vendatec.svg' ?>" alt="Vendatec" class="logo" itemprop="image">
+                    <img src="<?php echo  get_template_directory_uri() . '/dist/images/vendatec.svg' ?>" alt="Vendatec" class="logo scroll-effect" itemprop="image">
                 </a>
             </div>
             <div class="icons">
@@ -62,7 +62,7 @@
                     <button onclick="openMenu()" class="bg-menu-mobile">Menu</button>
                 </div>
                 <div class="top">
-                    <div class="search-bar">
+                    <div class="search-bar scroll-effect">
                         <img src="<?php echo  get_template_directory_uri() . '/dist/icons/search.svg' ?>" class="search search-icon" alt="Vendatec">
                     </div>
                     <div class="menu-items">
@@ -72,7 +72,7 @@
                                 'theme_location' => 'custom_header_menu',
                                 'menu'           => 'Menu do Header',
                                 'menu_id'        => 'custom-header-menu',
-                                'menu_class'     => 'main-menu',
+                                'menu_class'     => 'main-menu scroll-effect',
                                 'fallback_cb'    => '__return_false',
                             ));
                             ?>
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="search-popup">
+        <div class="search-popup scroll-effect">
             <div class="search-popup-content">
                 <button class="search-popup-close">&times;</button>
                 <form action="<?php echo esc_url(home_url('/')); ?>" method="get">

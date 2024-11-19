@@ -10,7 +10,7 @@
 
             if ($docs->have_posts()) :
         ?>
-                <div class="docs-list--items">
+                <div class="docs-list--items scroll-effect">
                     <?php
                     while ($docs->have_posts()) :
                         $docs->the_post();
