@@ -34,25 +34,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
   
-//   var scrollToTopBtn = document.querySelector('#scrollToTopBtn');
+  var scrollToTopBtn = document.querySelector('#scrollToTopBtn');
 
-//   window.addEventListener('scroll', function() {
-//     if (window.scrollY > 20) {
-//       scrollToTopBtn.style.display = 'block';
-//     } else {
-//       scrollToTopBtn.style.display = 'none';
-//     }
-//   });
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
 
-//   scrollToTopBtn.addEventListener('click', function() {
-//     window.scrollTo({
-//       top: 0,
-//       behavior: 'smooth'
-//     });
-//   });
-// });
+  scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {

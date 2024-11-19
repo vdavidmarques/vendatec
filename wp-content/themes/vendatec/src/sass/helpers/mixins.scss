@@ -224,3 +224,8 @@
     }
   }
 }
+
+@mixin inner-shadow($shadow-color, $shadow-offset-x, $shadow-offset-y, $shadow-blur-radius, $shadow-opacity) {
+  filter: drop-shadow($shadow-offset-x, $shadow-offset-y, $shadow-blur-radius, $shadow-color) drop-shadow(-$shadow-offset-x, -$shadow-offset-y, $shadow-blur-radius, $shadow-color);
+  opacity: $shadow-opacity;
+}

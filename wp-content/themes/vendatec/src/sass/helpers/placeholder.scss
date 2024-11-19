@@ -33,8 +33,13 @@
 
   @media (min-width: $breakpoint-xl) {
     clip-path: $clip-path-xl;
+
+    //box-shadow: inset 24px 24px 34px 0 rgba(0, 0, 0, 0.65);
+    @include inner-shadow(rgba(0, 0, 0, 0.65), 24px, 24px, 34px, 1);
   }
 }
+
+
 
 %content-padding-top-bottom {
   padding: 2.5rem 0;

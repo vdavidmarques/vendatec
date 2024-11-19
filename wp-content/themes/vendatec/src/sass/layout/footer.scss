@@ -123,4 +123,45 @@ footer {
       color: $grayLight;
     }
   }
+
+  .wpp-float{
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    position: fixed;
+    z-index: 50;
+    @include anime-bounce;
+    bottom: 11.25rem;
+    right: 0.9375rem;
+    display: none;
+    
+    @media screen and (min-width: $breakpoint-lg) {
+        display: block;
+        width: 3.125rem;
+        height: 3.125rem;
+        right: 0.9375rem;
+    }
+}
+
+.scroll-to-top-btn{
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+    padding-left: 1.5rem;
+    text-indent: -624.9375rem;
+    border: none;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    position: fixed;
+    bottom: 6.875rem;
+    right: 0.9375rem;
+    background: url("../../dist/icons/arrow-top.svg");
+    width: 1.875rem;
+    height: 1.875rem;
+    object-fit: contain;
+    
+    @media screen and (min-width: $breakpoint-lg) {
+        bottom: 7.125rem;
+    }
+}
 }

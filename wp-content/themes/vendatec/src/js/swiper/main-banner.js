@@ -23,10 +23,7 @@ const swiper = new Swiper(swiperElement, {
 const swiperElementPartner = document.querySelector(".feature-partner-home .swiper-container");
 const swiperPartner = new Swiper(swiperElementPartner, {
   slidesPerView: 'auto',
-  spaceBetween: 20,
-  // autoplay: {
-  //   delay: 8000,
-  // },     
+  spaceBetween: 20,    
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
