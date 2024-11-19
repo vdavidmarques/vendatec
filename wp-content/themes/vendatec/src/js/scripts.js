@@ -21,7 +21,6 @@ function closeMenu() {
   body.classList.remove("overflow-hidden");
 }
 
-// Close the modal when any menu item is clicked
 document.addEventListener('DOMContentLoaded', function() {
   var menuModal = document.querySelector('.menu-items');
   var menuItems = document.querySelectorAll('.menu-items .menu-item a');
@@ -76,3 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll();
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const searchIcon = document.querySelector('.search-icon');
+  const searchPopup = document.querySelector('.search-popup');
+  const closeButton = document.querySelector('.search-popup-close');
+  
+  searchIcon.addEventListener('click', function () {
+      searchPopup.classList.add('is-visible');
+  });
+  
+  closeButton.addEventListener('click', function () {
+      searchPopup.classList.remove('is-visible');
+  });
+  
+  searchPopup.addEventListener('click', function (e) {
+      if (e.target === searchPopup) {
+          searchPopup.classList.remove('is-visible');
+      }
+  });
+});

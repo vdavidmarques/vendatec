@@ -1,0 +1,43 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+@import "../helpers/placeholder.scss";
+
+.search-page{
+    padding: 2.5rem 0;
+
+    @media (min-width: $breakpoint-lg) {
+        padding: 5rem 0;
+    }
+    &--result{
+        margin-bottom: 2.5rem;
+    }
+
+    &--search-query{
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: $fColorDark;
+    }
+
+    &--list{
+        display: grid;
+        @include grid-cols-3;
+        gap: 1.5rem;
+
+        &--item{
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.25rem;
+            line-height: 1.5rem;
+
+            .title{
+                text-transform: uppercase;
+                font-weight: 900;
+                font-family: $font-rubik;
+                font-size: 1.125rem;
+            }
+            .desc{
+                font-size: 0.875rem;
+            }
+        }
+    }
+}

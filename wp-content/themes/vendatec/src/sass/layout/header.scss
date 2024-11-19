@@ -12,7 +12,7 @@ header {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    
+
     .branding {
       display: flex;
       align-items: center;
@@ -29,7 +29,7 @@ header {
         }
       }
     }
-    
+
     .open-menu-mobile {
       @media (min-width: $breakpoint-lg) {
         display: none;
@@ -49,15 +49,15 @@ header {
       }
     }
 
-    .top{
+    .top {
       @media screen and (min-width: $breakpoint-lg) {
         display: flex;
-        flex-direction:row-reverse;
+        flex-direction: row-reverse;
         column-gap: 1.25rem;
       }
     }
 
-    .icons{
+    .icons {
       display: flex;
       column-gap: 3.75rem;
       flex-direction: row-reverse;
@@ -67,7 +67,7 @@ header {
       }
     }
 
-    .menu-items {     
+    .menu-items {
       font-family: $font-rubik;
       text-transform: uppercase;
       color: $fColor;
@@ -147,14 +147,84 @@ header {
           background: url(../../dist/icons/close-menu-icon.svg);
           cursor: pointer;
         }
-        
       }
-
     }
 
     .search-bar {
       width: 1.875rem;
       height: 1.875rem;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  .search-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    &.is-visible {
+      display: flex;
+    }
+    .search-popup-content {
+      background: $white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+      }
+
+      &--button-submit {
+        background-color: $fColorDark;
+        color: $white;
+        text-transform: uppercase;
+        font-family: $font-rubik;
+        font-weight: 900;
+        border: none;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $fColorUltraDark;
+        }
+      }
+
+      .search-popup-close {
+        position: absolute;
+        top: 0;
+        right: 0.3125rem;
+        background: transparent;
+        border: none;
+        font-size: 1.875rem;
+        cursor: pointer;
+        color: $fColorUltraDark;
+      }
     }
   }
 }

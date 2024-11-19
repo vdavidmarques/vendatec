@@ -63,7 +63,7 @@
                 </div>
                 <div class="top">
                     <div class="search-bar">
-                        <img src="<?php echo  get_template_directory_uri() . '/dist/icons/search.svg' ?>" class="search" alt="Vendatec">
+                        <img src="<?php echo  get_template_directory_uri() . '/dist/icons/search.svg' ?>" class="search search-icon" alt="Vendatec">
                     </div>
                     <div class="menu-items">
                         <nav id="menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
@@ -82,6 +82,15 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="search-popup">
+            <div class="search-popup-content">
+                <button class="search-popup-close">&times;</button>
+                <form action="<?php echo esc_url(home_url('/')); ?>" method="get">
+                    <input type="text" name="s" placeholder="Pesquisar..." required>
+                    <button type="submit" class="search-popup-content--button-submit">Buscar</button>
+                </form>
             </div>
         </div>
     </header>
