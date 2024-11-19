@@ -1,5 +1,6 @@
 @import "../helpers/variables.scss";
 @import "../helpers/mixins.scss";
+@import "../helpers/placeholder.scss";
 
 html,
 body,
@@ -352,5 +353,39 @@ img {
     @media(min-width: $breakpoint-lg){
       display: block;
     }
+  }
+}
+
+.privacy-policy-page, .page-not-found .not-found{
+  @extend %heading-title-styles;
+  
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6, strong {
+    color: $fColorDark;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p{
+    margin-bottom: 1.25rem;
+
+  }
+
+}
+
+.privacy-policy-page, .page-not-found{
+  padding: 2.5rem 0;
+
+  @media  (min-width: $breakpoint-lg) {
+    padding: 5rem 0;
   }
 }
