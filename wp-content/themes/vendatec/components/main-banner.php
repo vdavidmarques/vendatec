@@ -1,3 +1,29 @@
+<?php 
+    function getEnvironmentId()
+    {
+        // URL do servidor atual
+        $serverHost = $_SERVER['HTTP_HOST'];
+    
+        // URLs para identificar os ambientes
+        $productionHost = 'vendatec.com.br';
+        $localhostHost = 'localhost:8080';
+    
+        // IDs associados aos ambientes
+        $productionId = '8';
+        $localId = '57';
+    
+        // Comparação para determinar o ambiente
+        if (strpos($serverHost, $productionHost) !== false) {
+            return $productionId;
+        } elseif (strpos($serverHost, $localhostHost) !== false) {
+            return $localId;
+        } else {
+            return 'Ambiente desconhecido';
+        }
+    }
+     $environment = getEnvironmentId();
+     $id = $environment;
+?>
 <section class="main-banner">
     <div class="swiper-container">
         <div class="swiper-wrapper">

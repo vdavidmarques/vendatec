@@ -4,11 +4,12 @@
 
 .content-about {
   &--header {
-    padding: 2.5rem 0;
+    padding: 5rem 0;
     background-color: $fColorDark;
     color: $white;
+
     @media (min-width: $breakpoint-lg) {
-      padding: 5rem 0;
+      padding: 12.5rem 0;
     }
 
     &--texts {
@@ -25,11 +26,36 @@
         @media (min-width: $breakpoint-lg) {
           @include col-span-5;
         }
+
+        p{
+          margin-top: 1.25rem;
+        }
       }
 
       .desc-wwa {
         @media (min-width: $breakpoint-lg) {
           @include col-span-7;
+        }
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+
+        .timeline-item {
+          background-color: $gray;
+          padding: 2.5rem;
+          border-radius: 2.5rem;
+
+          &--year{
+            color: $fColorDark;
+            font-weight: 900;
+            font-family: $font-rubik;
+            font-size: 1.875rem;
+            margin-bottom: 1.25rem;
+          }
+
+          &--content{
+            color: $fColorUltraDark;
+          }
         }
       }
     }

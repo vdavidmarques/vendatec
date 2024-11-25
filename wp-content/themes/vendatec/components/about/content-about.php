@@ -4,9 +4,22 @@
             <article class="content-about--header--texts">
                 <div class="title-wwa scroll-effect">
                     <h2><?php echo get_field('title-wwa'); ?></h2>
+                    <?php echo get_field('desc-wwa'); ?>
                 </div>
                 <div class="desc-wwa scroll-effect">
-                    <?php echo get_field('desc-wwa'); ?>
+                    <?php 
+                        $timeline = get_field('timeline');
+                        foreach ($timeline as $item):
+                        ?>
+                        <div class="timeline-item scroll-effect">
+                            <div class="timeline-item--year">
+                                <h3><?php echo $item['year']; ?></span>
+                            </div>
+                            <div class="timeline-item--content">
+                                <?php echo $item['desc']; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>                        
                 </div>
             </article>
         </div>

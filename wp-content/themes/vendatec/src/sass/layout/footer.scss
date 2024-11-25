@@ -11,15 +11,14 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    @media (min-width: $breakpoint-lg){
+
+    @media (min-width: $breakpoint-lg) {
       display: grid;
       @include grid-cols-12;
     }
-    
-    
-    .branding{
-      @media (min-width: $breakpoint-lg){
+
+    .branding {
+      @media (min-width: $breakpoint-lg) {
         @include col-span-3;
       }
 
@@ -38,8 +37,8 @@ footer {
       color: $fColor;
       row-gap: 2.5rem;
       text-align: center;
-      
-      @media (min-width: $breakpoint-lg){
+
+      @media (min-width: $breakpoint-lg) {
         @include col-span-9;
         display: grid;
         @include grid-cols-9;
@@ -48,16 +47,16 @@ footer {
       a {
         @extend %link-hover;
       }
-      
-      #menu{
+
+      #menu {
         text-transform: uppercase;
-        @media (min-width: $breakpoint-lg){
+        @media (min-width: $breakpoint-lg) {
           @include col-span-3;
         }
       }
 
       .contact {
-        @media (min-width: $breakpoint-lg){
+        @media (min-width: $breakpoint-lg) {
           @include col-span-6;
         }
 
@@ -69,14 +68,14 @@ footer {
           align-items: center;
 
           .item {
-           @extend %display-flex-row;
+            @extend %display-flex-row;
             column-gap: 0.9375rem;
 
             a {
               @extend %display-flex-row;
               column-gap: 0.625rem;
-              
-              &:hover #styled-element{
+
+              &:hover #styled-element {
                 stroke: $fColorUltraDark;
               }
             }
@@ -86,32 +85,30 @@ footer {
         .icon {
           width: 1.25rem;
           height: 1.25rem;
-          object-fit: contain; 
-          
-          
+          object-fit: contain;
         }
       }
     }
   }
-  .bottom{
+  .bottom {
     background-color: $fColorUltraDark;
     color: $grayLight;
     font-size: 0.875rem;
     text-align: center;
     padding: 0.625rem 0;
     margin-top: 2.5rem;
-    
+
     @media screen and (min-width: $breakpoint-lg) {
       text-align: left;
     }
-    
-    .contents{
+
+    .contents {
       @media screen and (min-width: $breakpoint-lg) {
         display: grid;
         @include grid-cols-2;
       }
 
-      .designer{
+      .designer {
         font-size: 0.625rem;
         @media screen and (min-width: $breakpoint-lg) {
           text-align: right;
@@ -119,12 +116,12 @@ footer {
       }
     }
 
-    a{
+    a {
       color: $grayLight;
     }
   }
 
-  .wpp-float{
+  .wpp-float {
     width: 2.5rem;
     height: 2.5rem;
     object-fit: contain;
@@ -133,15 +130,15 @@ footer {
     @include anime-bounce;
     bottom: 11.25rem;
     right: 0.9375rem;
-    
+
     @media screen and (min-width: $breakpoint-lg) {
       width: 3.125rem;
       height: 3.125rem;
       right: 0.9375rem;
     }
-}
+  }
 
-.scroll-to-top-btn{
+  .scroll-to-top-btn {
     background-position: center;
     cursor: pointer;
     overflow: hidden;
@@ -157,9 +154,10 @@ footer {
     width: 1.875rem;
     height: 1.875rem;
     object-fit: contain;
-    
+    z-index: 50;
+
     @media screen and (min-width: $breakpoint-lg) {
-        bottom: 7.125rem;
+      bottom: 7.125rem;
     }
-}
+  }
 }

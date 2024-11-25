@@ -1,5 +1,4 @@
 <?php
-include_once 'utils/check-enviroment.php';
 get_header();
 include 'components/main-banner.php';
 include 'components/home/content.php';
