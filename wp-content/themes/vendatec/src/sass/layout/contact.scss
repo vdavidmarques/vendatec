@@ -1,0 +1,92 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+@import "../helpers/placeholder.scss";
+
+.contact-infos {
+  &--container {
+    display: grid;
+    @include grid-cols-12;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    row-gap: 2.5rem;
+
+
+    @media screen and (min-width: $breakpoint-lg) {
+      padding: 6.25rem 0;
+      row-gap: 0;
+      column-gap: 2.5rem;
+    }
+
+    &--channels {
+      @include col-span-12;
+      color: $fColorDark;
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-5;
+      }
+
+      a {
+        color: $fColorDark;
+      }
+
+      .items {
+        align-items: baseline;
+      }
+    }
+
+    &--form {
+      @include col-span-12;
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-6;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type] {
+        border-radius: 6.25rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea,
+      input[type] {
+        width: 100%;
+        min-height: 2.875rem;
+        padding: 0 0.75rem 0 1.25rem;
+        border: 1px solid $fColorDark;
+        background-color: transparent;
+        color: $fColorDark;
+        font-size: 1rem;
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 0.75rem 2rem;
+        border-radius: 6.25rem;
+        border: none;
+        background: $fColor;
+        color: $gray;
+        font-size: 1.125rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $fColorDark;
+          @include transition-colors;
+        }
+      }
+
+      textarea{
+        padding-top: 20px;
+        padding-bottom: 1.25rem;
+      }
+
+      .wpcf7-form.init {
+        p {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}

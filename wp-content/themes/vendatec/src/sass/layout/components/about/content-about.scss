@@ -24,7 +24,7 @@
         margin-bottom: 1.25rem;
 
         @media (min-width: $breakpoint-lg) {
-          @include col-span-5;
+          @include col-span-4;
         }
 
         p{
@@ -34,7 +34,8 @@
 
       .desc-wwa {
         @media (min-width: $breakpoint-lg) {
-          @include col-span-7;
+          @include col-span-8;
+          @include col-start-6;
         }
         display: flex;
         flex-direction: column;
