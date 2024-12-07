@@ -11,24 +11,6 @@ add_action('wp_enqueue_scripts', function () {
     }
 });
 
-/*******************************
-        Adding logo
- ********************************/
-
-// function theme_custom_logo_setup() {
-//     add_theme_support('custom-logo', array(
-//         'height'      => 100, 
-//         'width'       => 300, 
-//         'flex-height' => true,
-//         'flex-width'  => true,
-//     ));
-// }
-// add_action('after_setup_theme', 'theme_custom_logo_setup');
-
-/*******************************
-    Função para validar posição de parceiro no ACF com grupos
- ********************************/
-
 function validar_posicao_parceiro_grupo($valid, $value, $field, $input) {
     if (!$valid) {
         return $valid;

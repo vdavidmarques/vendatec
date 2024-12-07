@@ -8,10 +8,6 @@
     background-color: $fColorDark;
     color: $white;
 
-    @media (min-width: $breakpoint-lg) {
-      padding: 12.5rem 0;
-    }
-
     &--texts {
       @media (min-width: $breakpoint-lg) {
         display: grid;

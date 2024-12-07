@@ -74,8 +74,8 @@
             <div class="copyright">
                 &copy; <?php echo esc_html(date_i18n(__('Y', 'vendatec'))); ?> | <?php echo esc_html(get_bloginfo('name')); ?> - Todos os Direitos reservados
             </div>
-            <a href="https://vdavidmarques.github.io/" target="_blank" class="designer">
-                By Vinícius Marques
+            <a href="https://baixada-web-studio.great-site.net/" target="_blank" class="designer">
+                By Baixada Web Studio
             </a>
         </div>
     </div>
