@@ -1,12 +1,12 @@
 <?php
 
 /*******************************
-        Creating Informações Page
+    Creating Informações Page
  ********************************/
 
 /*******************************
-        Disabling Guttenber Editor
- ********************************/
+    Disabling Guttenber Editor
+********************************/
 
 add_filter('use_block_editor_for_post_type', 'disable_guttemberg_editor');
 function disable_guttemberg_editor()
@@ -15,7 +15,7 @@ function disable_guttemberg_editor()
 }
 
 /*******************************
-        Adding the Options Page in Admin Menu
+    Adding the Options Page in Admin Menu
  *Create a page called "General Information", then change the ID and at get_page_by_path() of this page at the line below
  ********************************/
 
@@ -26,7 +26,7 @@ function linked_url()
 }
 
 /*******************************
-        Hiding the Options Page
+    Hiding the Options Page
  ********************************/
 
 add_filter('parse_query', 'exclude_pages_from_admin');

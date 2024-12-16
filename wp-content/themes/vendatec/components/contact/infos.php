@@ -50,6 +50,7 @@
                                 <?php echo $whatsapp ?>
                             </a>
                         </li>
+                        <?php if($instagram): ?>
                         <li class="item scroll-effect">
                             <a href="<?php echo $instagram ?>">
                                 <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,6 +60,8 @@
                                 <?php echo $instagram ?>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if($facebook): ?>
                         <li class="item scroll-effect">
                             <a href="<?php echo $facebook ?>">
                                 <svg width="22" height="22" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,6 +78,7 @@
                                 <?php echo $facebook ?>
                             </a>
                         </li>
+                        <?php endif; ?>
                     <?php endwhile; ?>
                 </ul>
             </div>

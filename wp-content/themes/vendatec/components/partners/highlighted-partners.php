@@ -40,6 +40,10 @@
                             $produtos = new WP_Query(array(
                                 'post_type' => 'produtos',
                                 'posts_per_page' => -1,
+                                'orderby' => 'meta_value_num',
+                                'type' => 'NUMERIC',
+                                'meta_key' => 'product-order',
+                                'order' => 'ASC',
                                 'tax_query' => array(
                                     array(
                                         'taxonomy' => 'parceiros',
