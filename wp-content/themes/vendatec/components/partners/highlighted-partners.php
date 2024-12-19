@@ -58,7 +58,7 @@
                                     <?php
                                     while ($produtos->have_posts()) : $produtos->the_post();
                                         $product_count++;
-                                        $is_hidden = $product_count > 3 ? 'style="display:none;"' : '';
+                                        $is_hidden = $product_count > 4 ? 'style="display:none;"' : '';
                                         $titulo = get_the_title();
                                         $description = get_field('products-desc');
                                         $thumb = get_the_post_thumbnail_url();
@@ -72,7 +72,8 @@
                                                     $file_url = get_field('file-docs', $post->ID);
                                                     if ($file_url) :
                                             ?>
-                                                        <a href="<?php echo $file_url ?>" target="_blank" class="products-for-partner-items--item--link">
+                                           
+                                                        <div class="products-for-partner-items--item--link">
                                                             <?php if ($thumb): ?>
                                                                 <div class="products-for-partner-items--item--thumb">
                                                                     <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
@@ -86,10 +87,11 @@
                                                                 <div class="title">
                                                                     <h3><?php echo esc_html($titulo); ?></h3>
                                                                 </div>
-                                                                <p class="desc"><?php echo esc_html($description); ?></p>
+                                                                <p class="desc" style="display:none;"><?php echo esc_html($description); ?></p>
+                                                                <a href="<?php echo $file_url ?>" target="_blank" style="display:none;" class="link-button"><?php echo $file_url ?></a>
                                                                 <button class="button button-secundary button--arrow button--arrow-up button--arrow-up--white">Saiba mais</button>
                                                             </div>
-                                                        </a>
+                                                        </div>
                                                 <?php
                                                     endif;
                                                 endforeach;

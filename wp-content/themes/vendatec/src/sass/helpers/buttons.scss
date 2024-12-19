@@ -4,21 +4,7 @@
 
 .button {
   @include transition-colors;
-  width: fit-content;
-  text-decoration: none;
-  border-radius: 20px;
-  line-height: 20px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-family: $font-rubik;
-  position: relative;
-  font-size: 1.125rem;
-  cursor: pointer;
-  border: none;
-
-  &:hover {
-    @include transition-colors;
-  }
+  @extend %button;
 
   &--primary {
     background-color: $fColor;
@@ -123,16 +109,6 @@
 
   &--download {
     @extend %button-icon;
-
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 2.125rem;
-      height: 2.125rem;
-      background-image: url("../../dist/icons/download.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-left: 0.5rem;
-    }
+    @extend %button-download;  
   }
 }
