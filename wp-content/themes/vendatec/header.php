@@ -5,23 +5,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width">
     <?php wp_head(); ?>
-
-    <title itemprop="name">
-        <?php
-            if(is_home()){
-                echo "";
-            }elseif(is_tax()){
-                echo single_cat_title() . ' |';
-            }elseif(is_archive()){
-                echo get_the_archive_title() . ' |';
-            }elseif(is_singular()){
-                echo single_post_title() . ' |';
-            }else{
-                echo get_the_title() . ' |';
-            }
-        ?>
-       Vendatec
-    </title>
+    <title itemprop="name"><?php wp_title(); ?></title>
 
     <?php include 'services/favicon.php'; ?>
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -34,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link itemprop="url" href="https://www.vendatec.com.br">
 
 </head>
 

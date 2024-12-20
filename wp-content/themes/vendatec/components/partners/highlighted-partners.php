@@ -1,4 +1,4 @@
-<section class="content-about highlighted-partners">
+<section class="content-about highlighted-partners" itemscope itemtype="http://schema.org/CreativeWork">
     <div class="container">
         <?php
         function exibir_parceiros_e_produtos()
@@ -24,14 +24,14 @@
 
                     if ($highlight):
         ?>
-                        <div class="highlighted-partners--item" data-partner-id="<?php echo esc_attr($partner_id); ?>">
+                        <div class="highlighted-partners--item" data-partner-id="<?php echo esc_attr($partner_id); ?>"  itemscope itemtype="http://schema.org/Organization">
                             <div class="content-about--header">
                                 <div id="<?php echo esc_attr($slug) ?>" class="content-about--header--anchor">&nbsp;</div>
                                 <article class="content-about--header--texts order-position-<?php echo esc_attr($highlighted_order); ?>">
                                     <div class="title-wwa scroll-effect">
-                                        <h2><?php echo esc_html($title); ?></h2>
+                                        <h2 itemprop="name"><?php echo esc_html($title); ?></h2>
                                     </div>
-                                    <div class="desc-wwa scroll-effect">
+                                    <div class="desc-wwa scroll-effect" itemprop="description">
                                         <?php echo esc_html($short_desc); ?>
                                     </div>
                                 </article>
@@ -54,7 +54,7 @@
                             ));
                             $product_count = 0;
                             if ($produtos->have_posts()) : ?>
-                                <div class="products-for-partner-items">
+                                <div class="products-for-partner-items" itemscope itemtype="http://schema.org/ItemList">
                                     <?php
                                     while ($produtos->have_posts()) : $produtos->the_post();
                                         $product_count++;
@@ -64,7 +64,7 @@
                                         $thumb = get_the_post_thumbnail_url();
                                         $files = get_field('product-file', get_the_ID());
                                     ?>
-                                        <div class="products-for-partner-items--item scroll-effect" <?php echo $is_hidden; ?>>
+                                        <div class="products-for-partner-items--item scroll-effect" <?php echo $is_hidden; ?> itemscope itemtype="http://schema.org/ListItem">
                                             <?php
                                             if ($files) :
                                                 foreach ($files as $post) :
@@ -72,22 +72,22 @@
                                                     $file_url = get_field('file-docs', $post->ID);
                                                     if ($file_url) :
                                             ?>
-                                           
                                                         <div class="products-for-partner-items--item--link">
                                                             <?php if ($thumb): ?>
                                                                 <div class="products-for-partner-items--item--thumb">
-                                                                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
+                                                                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image" itemprop="image">
                                                                 </div>
                                                             <?php else: ?>
                                                                 <div class="products-for-partner-items--item--thumb">
-                                                                    <img src="<?php echo get_template_directory_uri() . '/dist/images/produto-vendatec.jpg' ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
+                                                                    <img src="<?php echo get_template_directory_uri() . '/dist/images/produto-vendatec.jpg' ?>" alt="<?php echo esc_attr($titulo); ?>" class="image" itemprop="image">
                                                                 </div>
                                                             <?php endif; ?>
                                                             <div class="products-for-partner-items--item--content">
                                                                 <div class="title">
-                                                                    <h3><?php echo esc_html($titulo); ?></h3>
+                                                                    <h3 itemprop="name"><?php echo esc_html($titulo); ?></h3>
                                                                 </div>
-                                                                <p class="desc" style="display:none;"><?php echo esc_html($description); ?></p>
+                                                                <meta itemprop="position" content="<?php echo $product_count; ?>">
+                                                                <p class="desc" style="display:none;" itemprop="description"><?php echo esc_html($description); ?></p>
                                                                 <a href="<?php echo $file_url ?>" target="_blank" style="display:none;" class="link-button"><?php echo $file_url ?></a>
                                                                 <button class="button button-secundary button--arrow button--arrow-up button--arrow-up--white">Saiba mais</button>
                                                             </div>
