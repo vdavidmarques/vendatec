@@ -109,6 +109,22 @@
 
   &--download {
     @extend %button-icon;
-    @extend %button-download;  
+
+   @extend %button-download;
+
+    &.link{
+      background-color: $fColorDark;
+      color: $white;
+
+      &:hover {
+        background-color: $fColorUltraDark;
+      }
+    }
+
+    &.disable{
+      cursor: no-drop;
+      background-color: $gray;
+      color: $white;
+    }
   }
 }

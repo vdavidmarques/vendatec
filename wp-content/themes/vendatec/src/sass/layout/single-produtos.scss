@@ -1,0 +1,43 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+@import "../helpers/placeholder.scss";
+
+.single-produtos-banner{
+    display: grid;
+    align-items: center;
+    @include grid-cols-12;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    row-gap: 2.5rem;
+
+    @media (min-width: $breakpoint-lg){
+        padding-top: 6.25rem;
+        padding-bottom: 6.25rem;
+    }
+
+    &--bg{
+        @include col-span-12;
+        height: 21.875rem;
+
+        @media (min-width: $breakpoint-lg){
+            @include col-span-6;
+            height: 28.125rem;
+        }
+    }
+
+    &--text{
+        @include col-span-12;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+        
+        @media (min-width: $breakpoint-lg){
+            @include col-span-6;
+            padding-left: 3.75rem;
+        }
+
+        .title{
+            @extend %heading-title-styles;
+        }
+    }
+}

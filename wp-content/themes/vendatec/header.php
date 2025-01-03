@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link itemprop="url" href="https://www.vendatec.com.br">
+    <!-- This is responsible to preload the image make better for LCP configs(Page speed) -->
+    <link rel="preload" as="image" href="https://vendatec.com.br/wp-content/uploads/2024/11/compoguard.jpg?x73101" />
 
 </head>
 

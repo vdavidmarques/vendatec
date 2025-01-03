@@ -53,72 +53,41 @@
                             ));
                             $product_count = 0;
                             if ($produtos->have_posts()) : ?>
-                                <div class="products-for-partner-items">
+                                <div class="products-for-partner-items" itemscope itemtype="http://schema.org/ItemList">
                                     <?php
                                     while ($produtos->have_posts()) : $produtos->the_post();
                                         $product_count++;
                                         $is_hidden = $product_count > 4 ? 'style="display:none;"' : '';
+                                        $url = get_permalink();
                                         $titulo = get_the_title();
                                         $description = get_field('products-desc');
                                         $thumb = get_the_post_thumbnail_url();
-                                        $files = get_field('product-file', get_the_ID());
                                     ?>
-                                        <div class="products-for-partner-items--item scroll-effect" <?php echo $is_hidden; ?>>
-                                            <?php
-                                            if ($files) :
-                                                foreach ($files as $post) :
-                                                    setup_postdata($post);
-                                                    $file_url = get_field('file-docs', $post->ID);
-                                                    if ($file_url) :
-                                            ?>
-                                                        <div class="products-for-partner-items--item--link">
-                                                            <?php if ($thumb): ?>
-                                                                <div class="products-for-partner-items--item--thumb">
-                                                                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
-                                                                </div>
-                                                            <?php else: ?>
-                                                                <div class="products-for-partner-items--item--thumb">
-                                                                    <img src="<?php echo get_template_directory_uri() . '/dist/images/produto-vendatec.jpg' ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
-                                                                </div>
-                                                            <?php endif; ?>
-                                                            <div class="products-for-partner-items--item--content">
-                                                                <div class="title">
-                                                                    <h3><?php echo esc_html($titulo); ?></h3>
-                                                                </div>
-                                                                <p class="desc" style="display:none;"><?php echo esc_html($description); ?></p>
-                                                                <a href="<?php echo $file_url ?>" target="_blank" class="link-button" style="display:none;"></a>
-                                                                <button class="button button-secundary button--arrow button--arrow-up button--arrow-up--white">Saiba mais</button>
-                                                            </div>
-                                                        </div>
-                                                <?php
-                                                    endif;
-                                                endforeach;
-                                                wp_reset_postdata();
-                                            else:
-                                                ?>
-                                                <div class="products-for-partner-items--item--link">
-                                                    <?php if ($thumb): ?>
-                                                        <div class="products-for-partner-items--item--thumb">
-                                                            <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
-                                                        </div>
-                                                    <?php else: ?>
-                                                        <div class="products-for-partner-items--item--thumb">
-                                                            <img src="<?php echo get_template_directory_uri() . '/dist/images/produto-vendatec.jpg' ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
-                                                        </div>
-                                                    <?php endif; ?>
-                                                    <div class="products-for-partner-items--item--content">
-                                                        <div class="title">
-                                                            <h3><?php echo esc_html($titulo); ?></h3>
-                                                        </div>
-                                                        <p class="desc"><?php echo esc_html($description); ?></p>
-                                                        <button class="button button-secundary button--empty">&nbsp;</button>
+                                        <div class="products-for-partner-items--item scroll-effect" <?php echo $is_hidden; ?> itemscope itemtype="http://schema.org/ListItem">
+                                            <a href="<?php echo $url; ?>" class="products-for-partner-items--item--link">
+                                                <?php if ($thumb): ?>
+                                                    <div class="products-for-partner-items--item--thumb">
+                                                        <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image" itemprop="image">
                                                     </div>
+                                                <?php else: ?>
+                                                    <div class="products-for-partner-items--item--thumb">
+                                                        <img src="<?php echo get_template_directory_uri() . '/dist/images/produto-vendatec.jpg' ?>" alt="<?php echo esc_attr($titulo); ?>" class="image" itemprop="image">
+                                                    </div>
+                                                <?php endif; ?>
+                                                <div class="products-for-partner-items--item--content">
+                                                    <div class="title">
+                                                        <h3 itemprop="name"><?php echo esc_html($titulo); ?></h3>
+                                                    </div>
+                                                    <p class="desc" style="display:none;"><?php echo esc_html($description); ?></p>
+                                                    <button class="button button-secundary button--arrow button--arrow-up button--arrow-up--white">Saiba mais</button>
                                                 </div>
-                                            <?php endif; ?>
+                                            </a>
                                         </div>
+                                        <?php wp_reset_postdata(); ?>
                                     <?php endwhile; ?>
                                 </div>
-                            <?php endif;
+                            <?php
+                            endif;
                             wp_reset_postdata();
                             if ($product_count > 3) :
                             ?>
@@ -133,6 +102,5 @@
         }
         exibir_produtos();
         ?>
-
     </div>
 </section>

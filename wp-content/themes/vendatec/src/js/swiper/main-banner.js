@@ -1,25 +1,3 @@
-const swiperElement = document.querySelector(".main-banner .swiper-container");
-const swiperWrapper = swiperElement.querySelector(".swiper-wrapper");
-
-const swiperSlides = swiperElement.querySelectorAll(".swiper-slide");
-swiperSlides.forEach((slide,_) => {
-  const clonedSlide = slide.cloneNode(true);
-  swiperWrapper.appendChild(clonedSlide);
-});
-
-const swiper = new Swiper(swiperElement, {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  autoplay: {
-    delay: 7000,
-  },
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-});
-
 const swiperElementPartner = document.querySelector(".feature-partner-home .swiper-container");
 const swiperPartner = new Swiper(swiperElementPartner, {
   slidesPerView: 'auto',
@@ -41,7 +19,7 @@ const swiperPartner = new Swiper(swiperElementPartner, {
   },
 });
 
-// Função para ajustar a altura de todos os slides ao maior elemento
+
 function equalizeHeights() {
   const slides = document.querySelectorAll(".feature-partner-home .swiper-slide .content");
   
@@ -58,6 +36,5 @@ function equalizeHeights() {
   });
 }
 
-// Chama a função após o carregamento do swiper e quando a janela é redimensionada
 window.addEventListener("load", equalizeHeights);
 window.addEventListener("resize", equalizeHeights);

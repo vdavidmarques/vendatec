@@ -24,7 +24,7 @@
 
                     if ($highlight):
         ?>
-                        <div class="highlighted-partners--item" data-partner-id="<?php echo esc_attr($partner_id); ?>"  itemscope itemtype="http://schema.org/Organization">
+                        <div class="highlighted-partners--item" data-partner-id="<?php echo esc_attr($partner_id); ?>" itemscope itemtype="http://schema.org/Organization">
                             <div class="content-about--header">
                                 <div id="<?php echo esc_attr($slug) ?>" class="content-about--header--anchor">&nbsp;</div>
                                 <article class="content-about--header--texts order-position-<?php echo esc_attr($highlighted_order); ?>">
@@ -59,68 +59,33 @@
                                     while ($produtos->have_posts()) : $produtos->the_post();
                                         $product_count++;
                                         $is_hidden = $product_count > 4 ? 'style="display:none;"' : '';
+                                        $url = get_permalink();
                                         $titulo = get_the_title();
                                         $description = get_field('products-desc');
                                         $thumb = get_the_post_thumbnail_url();
-                                        $files = get_field('product-file', get_the_ID());
                                     ?>
                                         <div class="products-for-partner-items--item scroll-effect" <?php echo $is_hidden; ?> itemscope itemtype="http://schema.org/ListItem">
-                                            <?php
-                                            if ($files) :
-                                                foreach ($files as $post) :
-                                                    setup_postdata($post);
-                                                    $file_url = get_field('file-docs', $post->ID);
-                                                    if ($file_url) :
-                                            ?>
-                                                        <div class="products-for-partner-items--item--link">
-                                                            <?php if ($thumb): ?>
-                                                                <div class="products-for-partner-items--item--thumb">
-                                                                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image" itemprop="image">
-                                                                </div>
-                                                            <?php else: ?>
-                                                                <div class="products-for-partner-items--item--thumb">
-                                                                    <img src="<?php echo get_template_directory_uri() . '/dist/images/produto-vendatec.jpg' ?>" alt="<?php echo esc_attr($titulo); ?>" class="image" itemprop="image">
-                                                                </div>
-                                                            <?php endif; ?>
-                                                            <div class="products-for-partner-items--item--content">
-                                                                <div class="title">
-                                                                    <h3 itemprop="name"><?php echo esc_html($titulo); ?></h3>
-                                                                </div>
-                                                                <meta itemprop="position" content="<?php echo $product_count; ?>">
-                                                                <p class="desc" style="display:none;" itemprop="description"><?php echo esc_html($description); ?></p>
-                                                                <a href="<?php echo $file_url ?>" target="_blank" style="display:none;" class="link-button"><?php echo $file_url ?></a>
-                                                                <button class="button button-secundary button--arrow button--arrow-up button--arrow-up--white">Saiba mais</button>
-                                                            </div>
-                                                        </div>
-                                                <?php
-                                                    endif;
-                                                endforeach;
-                                                wp_reset_postdata();
-                                            else:
-                                                ?>
-                                                <div class="products-for-partner-items--item--link">
-                                                    <?php if ($thumb): ?>
-                                                        <div class="products-for-partner-items--item--thumb">
-                                                            <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
-                                                        </div>
-                                                    <?php else: ?>
-                                                        <div class="products-for-partner-items--item--thumb">
-                                                            <img src="<?php echo get_template_directory_uri() . '/dist/images/produto-vendatec.jpg' ?>" alt="<?php echo esc_attr($titulo); ?>" class="image">
-                                                        </div>
-                                                    <?php endif; ?>
-                                                    <div class="products-for-partner-items--item--content">
-                                                        <div class="title scroll-effect">
-                                                            <h3><?php echo esc_html($titulo); ?></h3>
-                                                        </div>
-                                                        <p class="desc scroll-effect"><?php echo esc_html($description); ?></p>
-                                                        <button class="button button-secundary button--empty">&nbsp;</button>
+                                            <a href="<?php echo $url; ?>" class="products-for-partner-items--item--link">
+                                                <?php if ($thumb): ?>
+                                                    <div class="products-for-partner-items--item--thumb">
+                                                        <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($titulo); ?>" class="image" itemprop="image">
                                                     </div>
+                                                <?php else: ?>
+                                                    <div class="products-for-partner-items--item--thumb">
+                                                        <img src="<?php echo get_template_directory_uri() . '/dist/images/produto-vendatec.jpg' ?>" alt="<?php echo esc_attr($titulo); ?>" class="image" itemprop="image">
+                                                    </div>
+                                                <?php endif; ?>
+                                                <div class="products-for-partner-items--item--content">
+                                                    <div class="title">
+                                                        <h3 itemprop="name"><?php echo esc_html($titulo); ?></h3>
+                                                    </div>
+                                                    <meta itemprop="position" content="<?php echo $product_count; ?>">
+                                                    <p class="desc" style="display:none;" itemprop="description"><?php echo esc_html($description); ?></p>
+                                                    <button class="button button-secundary button--arrow button--arrow-up button--arrow-up--white">Saiba mais</button>
                                                 </div>
-                                            <?php endif; ?>
+                                            </a>
                                         </div>
-                                        <?php
-                                        wp_reset_postdata();
-                                        ?>
+                                        <?php wp_reset_postdata(); ?>
                                     <?php endwhile; ?>
                                 </div>
                             <?php
