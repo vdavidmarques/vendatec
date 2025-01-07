@@ -4,7 +4,7 @@
             <article class="content-about--header--texts">
                 <div class="title-wwa scroll-effect">
                     <h2 itemprop="headline"><?php echo get_field('title-wwa'); ?></h2>
-                    <?php echo get_field('desc-wwa'); ?>
+                    <?php echo  wp_kses_post(get_field('desc-wwa')); ?>
                 </div>
                 <?php
                 $timeline_count = get_field('timeline_count');
