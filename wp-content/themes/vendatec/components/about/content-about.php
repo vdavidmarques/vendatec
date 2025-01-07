@@ -7,23 +7,31 @@
                     <?php echo get_field('desc-wwa'); ?>
                 </div>
                 <?php  
-                    $timeline = get_field('timeline'); 
-                    if($timeline):
+                    //$timeline = get_field('timeline');
+                    $timeline_count = get_field('timeline_count');
+
+                    if($timeline_count):
                 ?>
                     <div class="desc-wwa scroll-effect">
                         <?php 
                         
-                            foreach ($timeline as $item):
+                            for ($i = 1; $i <= $timeline_count; $i++): 
+                                $year = get_field("timeline_year_$i");
+                                $desc = get_field("timeline_desc_$i");
+                                if ($year && $desc):
                             ?>
                             <div class="timeline-item scroll-effect" itemscope itemtype="http://schema.org/Event">
                                 <div class="timeline-item--year">
-                                    <h3 itemprop="startDate"><?php echo $item['year']; ?></span>
+                                    <h3 itemprop="startDate"><?php  echo esc_html($year); ?></span>
                                 </div>
                                 <div class="timeline-item--content">
-                                    <?php echo $item['desc']; ?>
+                                    <?php echo wp_kses_post($desc); ?>
                                 </div>
                             </div>
-                        <?php endforeach; ?>                        
+                        <?php 
+                            endif;
+                        endfor; 
+                        ?>
                     </div>
                 <?php endif; ?>
             </article>
